@@ -20,3 +20,13 @@ function show()
     return json_encode($post);
 }
 ```
+
+### Development Instructions
+
+Run PHP Development Sever
+
+```
+php -S localhost:8000
+```
+
+#### Note - Component style done in CSS / We may replace SCSS like preprocess.
