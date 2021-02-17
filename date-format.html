@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CrossKnowledge - Code challenge</title>
+</head>
+<body>
+<script>
+    // This will create elements for testing, DO NOT change this code
+    (() => {
+        const MS_PER_MINUTE = 60000
+        const NOW = new Date()
+        let minutes = [0, 1, 30, 60, 6 * 60, 23 * 60, 24 * 60]
+        let dates = []
+
+        minutes.forEach((i) => dates.push(new Date(NOW - i * MS_PER_MINUTE)))
+
+        setInterval(() => {
+            document.body.innerHTML = "";
+
+            dates.forEach((item) => {
+                let el = document.createElement("div")
+                el.innerHTML = "Started "
+                let dt = document.createElement('span')
+                dt.className = 'js-date-format'
+                dt.innerHTML = toHumanReadable(item)
+                el.appendChild(dt)
+                document.body.appendChild(el)
+            })
+        }, 1000);
+    })();
+
+    /**
+     * Given data object to Make Human Readable format
+     *
+     * @param {Date} date
+     * @returns {string}
+     */
+    function toHumanReadable(date) {
+        const now = new Date().getTime()
+        const millisecond = now - date.getTime();
+
+        const lastPart = number => {
+            return ((number > 1) ? 's' : '') + ' ago';
+        }
+
+        const seconds = parseInt(millisecond / 1000),
+            minutes = parseInt(millisecond / (1000 * 60)),
+            hours = parseInt(millisecond / (1000 * 60 * 60));
+
+        if (seconds < 60)
+            return seconds + " second" + lastPart(seconds);
+        else if (minutes < 60)
+            return minutes + " minute" + lastPart(minutes);
+        else if (hours < 24)
+            return hours + " hour" + lastPart(hours);
+
+        return date.toISOString()
+    }
+</script>
+</body>
+</html>

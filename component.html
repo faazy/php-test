@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CrossKnowledge - Code challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, .03);
+            width: 100%;
+            max-width: 315px;
+            margin: 2em;
+            border: 1px solid rgba(0, 0, 0, .125);
+            display: grid;
+            position: relative;
+        }
+
+        .card .card-header {
+            margin: 0;
+            width: 100%;
+            display: table;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card .card-header > * {
+            padding: 0.75rem;
+        }
+
+        .card .card-header .card-title {
+            font-weight: 500;
+        }
+
+        .card-header .card-header-info {
+            display: table-cell;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .card-header .card-header-info .movie-duration {
+            margin-top: .5rem;
+        }
+
+        .card .card-header .rating-info {
+            display: table-cell;
+            float: right;
+            position: relative;
+            margin-top: .5rem;
+        }
+
+        .card .card-header .rating-info .icon-logo {
+            width: 20px;
+            vertical-align: bottom;
+        }
+
+        .card .card-body {
+            position: relative;
+        }
+
+        .card-body .movie-poster {
+            width: 100%;
+            height: auto;
+        }
+
+        .card .card-footer {
+            padding: .75rem;
+        }
+
+        .btn {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            padding: .5rem;
+            font-weight: 400;
+            cursor: pointer;
+            background: #b2b2b2;
+            text-align: center;
+            text-decoration: none;
+            color: #262626;
+            border-radius: 2rem;
+            border: 2px solid #c8c8c8;
+        }
+
+        .btn.movie-review-btn {
+            position: absolute;
+            width: 50%;
+            left: 20%;
+            bottom: 5%;
+        }
+
+
+    </style>
+</head>
+<body>
+<article class="card">
+    <header class="card-header">
+        <div class="card-header-info">
+            <div class="card-title">
+                Avengers: Infinity War
+            </div>
+            <div class="movie-duration">
+                156 minutes
+            </div>
+        </div>
+        <div class="rating-info">
+            85%
+            <img class="icon-logo"
+                 src="https://www.rottentomatoes.com/assets/pizza-pie/images/icons/global/cf-lg.3c29eff04f2.png"
+                 alt="Header Icon Image">
+        </div>
+    </header>
+
+    <div class="card-body">
+        <img alt="Poster Image" class="movie-poster" src="https://i.ibb.co/9tLcR7s/avengers.jpg">
+        <a href="https://www.rottentomatoes.com/m/avengers_infinity_war" target="_blank" class="btn movie-review-btn">
+            Check review
+        </a>
+    </div>
+
+    <footer class="card-footer">
+        <p>
+            An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic
+            Universe, Marvel Studios' "Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of
+            all time. The Avengers and their Super Hero allies must be willing to sacrifice all in an attempt to defeat
+            the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+        </p>
+    </footer>
+</article>
+</body>
+</html>
